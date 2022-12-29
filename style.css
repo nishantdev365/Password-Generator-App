@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./assets/fonts/JetBrainsMono-VariableFont_wght.ttf")
+    format("truetype");
+  font-style: normal;
+}
+
+:root {
+  --almost-white: #e6e5ea;
+  --light-grey: #817d92;
+  --dark-grey: #24232c;
+  --very-dark-grey: #18171f;
+  --neon-green-strong: #a4ffaf;
+  --yellow-medium: #f8cd65;
+  --orange-weak: #fb7c58;
+  --red-too-weak: #f64a4a;
+}
+
+body {
+  font-family: "JetBrains Mono";
+  background-color: var(--very-dark-grey);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hero {
+  height: 100%;
+  padding: 2px 0 2px 0;
+}
+
+h6 {
+  font-size: medium;
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.input,
+.box {
+  height: auto;
+  width: 500px;
+  padding: 15px 20px;
+  background-color: var(--dark-grey);
+  color: var(--almost-white);
+}
+
+.password_text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+
+.copy {
+  float: right;
+  cursor: pointer;
+  transform: translateY(-110%);
+}
+
+.box {
+  margin-top: 20px;
+}
+
+.length_head {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0%;
+}
+
+#rangeValue {
+  font-size: x-large;
+  color: var(--neon-green-strong);
+}
+
+/* --------------Slider----CSS-------- */
+
+#slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  outline: none;
+  transition: background 0.2s;
+  background: var(--very-dark-grey);
+  margin-bottom: 30px;
+}
+
+#slider:focus {
+  background: var(--neon-green-strong);
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--almost-white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#slider input[type="”range”"] {
+  -webkit-appearance: none !important;
+  appearance: none;
+  width: 420px;
+  height: 5px;
+  border: none;
+  outline: none;
+}
+
+/* -------------checkbox---------- */
+
+.checkboxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--dark-grey);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  box-sizing: border-box;
+  background-color: var(--neon-green-strong);
+}
+
+.checkbox-container input:not(:checked) ~ .checkmark {
+  box-sizing: border-box;
+  border: 2px solid var(--almost-white);
+}
+
+.checkbox-container input:not(:checked) ~ .checkmark:hover {
+  box-sizing: border-box;
+  border: 2px solid var(--neon-green-strong);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--dark-grey);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* --------------strength--------- */
+
+.strength-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--very-dark-grey);
+  padding: 2px 20px;
+  margin-bottom: 20px;
+}
+
+.strength-bar-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.strength-bar {
+  height: 30px;
+  width: 10px;
+}
+
+.strength_text {
+  color: var(--light-grey);
+  font-weight: 500;
+}
+
+.bg-yellow {
+  background-color: var(--yellow-medium);
+}
+
+.bg-orange {
+  background-color: var(--orange-weak);
+}
+
+.bg-red {
+  background-color: var(--red-too-weak);
+}
+
+.bg-green {
+  background-color: var(--neon-green-strong);
+}
+
+.strength-bar-empty {
+  box-sizing: border-box;
+  background-color: var(--very-dark-grey);
+  border: 2px solid var(--almost-white);
+}
+
+.bar-value-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bar-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.generate-button {
+  background-color: var(--neon-green-strong);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid var(--neon-green-strong);
+  padding: 15px 20px;
+  width: 100%;
+  color: var(--very-dark-grey);
+  cursor: pointer;
+}
+
+.font-body {
+  font-family: "JetBrains Mono";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.generate-button:hover:enabled {
+  box-sizing: border-box;
+  background-color: var(--dark-grey);
+  color: var(--neon-green-strong);
+  border: 2px solid var(--neon-green-strong);
+}
+
+.copy-icon:hover {
+  color: var(--almost-white);
+}
